@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
+<head>
+	<title>fb2cal</title>
+	<link rel="stylesheet" href="/static/main.css" type="text/css" />
+	
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+	<div id="main">
+		<div id="header">
+			<div style="float:left"><p>{% block title %}{% endblock %}</p></div>
+			<div style="float:right"><p>{% block accessory %}{% endblock %}</p></div>
+			<div class="clearFix"></div>
+		</div>
+		
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div>
+	
+	<div id="fb-root"></div>
+	
+	<div id="footer">
+		<p>a project by <a href="http://mattrajca.com/">Matt Rajca</a> - <a href="/privacyPolicy">privacy policy</a> - <a href="http://github.com/mattrajca/fb2cal/wiki">help</a> - <a href="http://github.com/mattrajca/fb2cal">source code</a></p>
+	</div>
+	
+	{% if facebook_app_id %}
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({appId: '{{ facebook_app_id }}', status: true, cookie: true, xfbml: true});
+			FB.Event.subscribe('auth.login', function(response) {
+				window.location.reload();
+			});
+		};
+		(function() {
+			var e = document.createElement('script');
+			e.type = 'text/javascript';
+			e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+			e.async = true;
+			document.getElementById('fb-root').appendChild(e);
+		}());
+	</script>
+	{% endif %}
+</body>
+</html>

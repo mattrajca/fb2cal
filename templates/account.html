@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Setup Account{% endblock %}
+
+{% block content %}
+
+<p>Create a password for your fb2cal account. You will need these credentials when subscribing to your friends' birthday calendar. For security purposes, your password should be different from your Facebook account password.</p>
+
+<form action="/setPassword" method="get">
+	<table>
+		<tr>
+			<td class="label"><label for="username">Username</label></td>
+			<td><input class="textField" name="username" disabled="true" type="text" value="{{ uid }}" /></td>
+		</tr>
+		<tr>
+			<td class="label"><label for="password">Password</label></td>
+			<td><input class="textField" name="password" type="password" /></td>
+		</tr>
+		<tr>
+			<td class="label"></td>
+			<td><input type="submit" value="Submit" /></td>
+		</tr>
+	</table>
+</form>
+
+{% endblock %}

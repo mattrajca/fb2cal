@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy{% endblock %}
+
+{% block content %}
+
+<p>When you log into fb2cal via Facebook, only your per-session access token, UID, and fb2cal password are stored in the data store. Your friends' birthdays are fetched directly from Facebook's servers and cached in the memcache for 48 hours. All of fb2cal is served using HTTPS and basic authentication is used to retrieve birthdays (for compatibility).</p>
+<p>For complete transparency, feel free to check out the source of fb2cal on <a href="http://github.com/mattrajca/fb2cal">github</a>.</p>
+
+{% endblock %}

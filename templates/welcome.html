@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+<p>fb2cal lets you view your friends' birthdays right from your favorite calendaring program. iCal, Calendar (iOS), Outlook 2007 (and up), and Mozilla Sunbird are currently supported.</p>
+<p>To get started, log in to Facebook below.</p>
+<fb:login-button perms="offline_access,friends_birthday"></fb:login-button>
+
+{% endblock %}

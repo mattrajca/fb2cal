@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script type="text/javascript">
+	function logout() {
+		FB.logout(function(response) {
+			window.location = "https://fb2cal.appspot.com/";
+		});
+	}
+</script>
+{% endblock %}
+
+{% block title %}Information{% endblock %}
+{% block accessory %}<a href="javascript:logout();">&gt; Log out</a>{% endblock %}
+
+{% block content %}
+
+<p>Subscribe to this URL in your favorite calendaring program: <strong>https://fb2cal.appspot.com/birthdays.ics</strong>. When prompted, enter your fb2cal account credentials. Your username is your Facebook UID - <strong>{{ uid }}</strong></p>
+
+<p>If you want to sync your Facebook events, navigate to the <strong>Events</strong> section of your Facebook account, and press <strong>Export Events</strong>. Follow the instructions on the pop-up that appears.</p>
+
+<p style="margin-bottom:4px"><a href="/emptyCache">&gt; Flush Cache</a></p>
+<p style="margin-top:0"><a href="/setupAccount">&gt; Change Password</a></p>
+
+{% endblock %}

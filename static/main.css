@@ -1,0 +1,61 @@
+body {
+	color: #333;
+	font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0;
+	background-color: #F7F7F7;
+}
+p:first-child {
+	margin-top: 0;
+}
+p:last-child {
+	margin-bottom: 0;
+}
+a {
+	color: #3b5998;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+div.clearFix {
+	clear: both;
+}
+td.label {
+	text-align: right;
+	padding-right: 4px;
+}
+td input.textField {
+	width: 150px;
+} 
+#main {
+	max-width: 560px;
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	border: 1px solid #1C3C78;
+}
+#header {
+	background-color: #5571A6;
+	padding: 6px 12px;
+	color: white;
+}
+#header p {
+	font-weight: bold;
+	font-size: 13px;
+	margin: 0;
+}
+#header a {
+	color: white;
+}
+#content {
+	padding: 13px 12px;
+}
+#footer {
+	margin-top: 12px;
+	font-size: 12px;
+	text-align: center;
+	font-style: italic;
+	color: #4C4C4C;
+}
